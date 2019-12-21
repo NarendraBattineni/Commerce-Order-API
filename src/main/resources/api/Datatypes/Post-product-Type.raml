@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: post -product
+type: object
+properties:
+  name : string
+  description : string
+  originalPrice : integer
+  offer :
+    type: object
+    properties:
+      offerPrice : number
+      offerValidUntil : integer
+  brandName : string
+  images :
+    type: array
+      

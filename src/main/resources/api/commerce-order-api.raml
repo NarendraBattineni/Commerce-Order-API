@@ -1,0 +1,44 @@
+#%RAML 1.0
+title: Commerce-Order-API
+
+
+
+/order:
+    get:
+      description: Get all the order details
+      body:
+        application/json:
+          example: !include Examples/Product-Respose.json
+            
+    post:
+      description: Post an order with the details
+      body:
+        application/json:
+          type: !include Datatypes/Post-product-Type.raml            
+          example: !include Examples/post-Product.json            
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+               {
+                 "Message" : Product created succsesfully
+               }
+    /{ID}:
+      uriParameters:
+        ID:
+          displayName: ID
+          type: number
+          required: true
+          example: 123
+        
+      get:
+        description: Get the product details based on ID
+        responses:
+          200:
+            description: Succses response
+            body:
+              application/json:
+                example: !include Examples/Product-Respose.json
+                 
+  
