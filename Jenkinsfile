@@ -16,17 +16,4 @@ pipeline{
  			    }
  		 }
  	}
- post {
-    always {
-        mail bcc: '', 
-             body: '''Hi, The pipeline job for Mulesoft is completed and the project was deployed to standalone server.
-                      This is the conformation mail from the jenkins.
-                  Regards,
-                  Jenkins system''', 
-              cc: '', 
-              from: 'Jenkins@prolifics.com', 
-              replyTo: '', 
-              subject: 'Jenkins job for mulesoft demo', 
-              to: 'blchanrendra@gmail.com'
-}
-}
+
